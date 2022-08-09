@@ -6,7 +6,6 @@ let pencil = document.querySelector(".pencil");
 let eraser = document.querySelector(".eraser");
 let sticky = document.querySelector(".sticky");
 let upload = document.querySelector(".upload");
-//default values
 let pencilFlag = false;
 let eraserFlag = false;
 let optionsFlag = true;
@@ -17,7 +16,6 @@ optionsCont.addEventListener("click", (e) => {
   else closeTools();
 });
 
-//Function for opening tool bar
 function openTools() {
   let iconELement = optionsCont.children[0];
   iconELement.classList.remove("fa-times");
@@ -25,7 +23,6 @@ function openTools() {
   toolsCont.style.display = "flex";
 }
 
-//Function for closing tool bar
 function closeTools() {
   let iconELement = optionsCont.children[0];
   iconELement.classList.remove("fa-bars");
@@ -35,14 +32,12 @@ function closeTools() {
   erasertoolCont.style.display = "none";
 }
 
-//pencilFlag == true => show pencil tools , pencilFlag == false => hide pencil tools
 pencil.addEventListener("click", function (e) {
   pencilFlag = !pencilFlag;
   if (pencilFlag) penciltoolCont.style.display = "block";
   else penciltoolCont.style.display = "none";
 });
 
-//eraserFlag == true => show eraser tools , eraserFlag == false => hide eraser tools
 eraser.addEventListener("click", function (e) {
   eraserFlag = !eraserFlag;
   if (eraserFlag) erasertoolCont.style.display = "flex";
@@ -50,7 +45,6 @@ eraser.addEventListener("click", function (e) {
 });
 
 upload.addEventListener("click", (e) => {
-    // To open file explorer
     let input = document.createElement("input");
     input.setAttribute("type", "file");
     input.click();
@@ -85,7 +79,6 @@ sticky.addEventListener("click", (e) => {
     createSticky(stickyTemplateHTML);
 })
 
-//Function to create stickyNote element  
 function createSticky(stickyTemplateHTML) {
     let stickyCont = document.createElement("div");
     stickyCont.setAttribute("class", "sticky-cont");
@@ -128,7 +121,7 @@ function dragAndDrop(element, event) {
     element.style.zIndex = 1000;
     moveAt(event.pageX, event.pageY);
 
-    // moves the stickyNote at (pageX, pageY) coordinates
+    // moves the ball at (pageX, pageY) coordinates
     // taking initial shifts into account
     function moveAt(pageX, pageY) {
         element.style.left = pageX - shiftX + 'px';
@@ -138,10 +131,10 @@ function dragAndDrop(element, event) {
     function onMouseMove(event) {
         moveAt(event.pageX, event.pageY);
     }
-    // move the stickyNote on mousemove
+    // move the ball on mousemove
     document.addEventListener('mousemove', onMouseMove);
 
-    // drop the stickyNote, remove unneeded handlers
+    // drop the ball, remove unneeded handlers
     element.onmouseup = function () {
         document.removeEventListener('mousemove', onMouseMove);
         element.onmouseup = null;

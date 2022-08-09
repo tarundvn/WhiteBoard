@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Satnam Waheguru -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
         integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" href="./icons/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="style.css">
     <title>WhiteBoard</title>
 </head>
@@ -18,12 +16,12 @@
     </div>
     <div class="tools-cont scale-tools">
         <img class="pencil" src="icons/pencils-svgrepo-com.svg">
-        <img class="eraser" src="icons/eraser-svgrepo-com.svg">
-        <img class="download" src="icons/download-svgrepo-com.svg">
-        <img class="upload" src="icons/Upload.svg">
-        <img class="sticky" src="icons/StickyNote.svg">
-        <img class="redo" src="icons/redo-svgrepo-com (1).svg">
-        <img class="undo" src="icons/undo-svgrepo-com.svg">
+        <img class="eraser" src="Icons/eraser-svgrepo-com.svg">
+        <img class="download" src="Icons/download-svgrepo-com.svg">
+        <img class="upload" src="Icons/Upload.svg">
+        <img class="sticky" src="Icons/StickyNote.svg">
+        <img class="redo" src="Icons/redo-svgrepo-com (1).svg">
+        <img class="undo" src="Icons/undo-svgrepo-com.svg">
     </div>
     <div class="pencil-tool-cont">
         <div class="pencil-width-cont">
@@ -39,12 +37,7 @@
     <div class="eraser-tool-cont">
         <input type="range" min="2" max="10" value="4" class="eraser-width">
     </div>
-    
     <canvas></canvas>
-    <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
-    <script>
-        let socket = io.connect("https://tarun-whiteboard.herokuapp.com");
-    </script>
     <script src="./tools.js"></script>
     <script src="./canvas.js"></script>
 </body>
