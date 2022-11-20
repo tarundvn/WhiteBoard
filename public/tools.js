@@ -10,12 +10,14 @@ let pencilFlag = false;
 let eraserFlag = false;
 let optionsFlag = true;
 
+//Tools toggling Logic
 optionsCont.addEventListener("click", (e) => {
   optionsFlag = !optionsFlag;
   if (optionsFlag) openTools();
   else closeTools();
 });
 
+//To open the tools
 function openTools() {
   let iconELement = optionsCont.children[0];
   iconELement.classList.remove("fa-times");
@@ -23,6 +25,7 @@ function openTools() {
   toolsCont.style.display = "flex";
 }
 
+//To close the tools
 function closeTools() {
   let iconELement = optionsCont.children[0];
   iconELement.classList.remove("fa-bars");
@@ -98,6 +101,7 @@ function createSticky(stickyTemplateHTML) {
     };
 }
 
+//Functions of sticky note
 function noteActions(minimize, remove, stickyCont) {
   remove.addEventListener("click", function (e) {
     stickyCont.remove();
@@ -113,6 +117,7 @@ function noteActions(minimize, remove, stickyCont) {
   });
 }
 
+//Took help from internet
 function dragAndDrop(element, event) {
     let shiftX = event.clientX - element.getBoundingClientRect().left;
     let shiftY = event.clientY - element.getBoundingClientRect().top;

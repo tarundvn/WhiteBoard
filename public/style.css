@@ -155,6 +155,7 @@ textarea{
   border:none;
   margin: none;
   resize: none;
+  outline: none;
 }
 
 .image-input{

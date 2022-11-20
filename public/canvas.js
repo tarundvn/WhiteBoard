@@ -18,10 +18,23 @@ let mouseDown = false;
 let undoRedoTracker = [];
 let track = 0;
 
-// API
 let tool = canvas.getContext('2d');
 tool.strokeStyle = penColor;
 tool.lineWidth = penWidth;
+
+function beginPath(eventObj)
+{
+    tool.beginPath();
+    tool.moveTo(eventObj.x,eventObj.y);
+}
+
+function drawStroke(eventObj)
+{
+    tool.strokeStyle = eventObj.color;
+    tool.lineWidth = eventObj.width;
+    tool.lineTo(eventObj.x,eventObj.y);
+    tool.stroke();
+}
 
 canvas.addEventListener("mousedown",function(e){
     mouseDown = true;
@@ -52,7 +65,6 @@ canvas.addEventListener("mouseup",function(e){
 
 undo.addEventListener("click",function(e)
 {
-    console.log(track);
     if(track > 0)
         track--;
     let trackObj = {
@@ -79,25 +91,11 @@ function undoRedoTrack(trackObj)
     undoRedoTracker = trackObj.undoRedoTracker;
     let url = undoRedoTracker[track];
     let img = new Image();
-    tool.clearRect(0, 0, canvas.width, canvas.height);
+    tool.clearRect(0, 0, canvas.width, canvas.height);  //Clears previous drawings
     img.src = url;
     img.onload = (e) => {
         tool.drawImage(img,0,0,canvas.width,canvas.height);
     }
-}
-
-function beginPath(eventObj)
-{
-    tool.beginPath();
-    tool.moveTo(eventObj.x,eventObj.y);
-}
-
-function drawStroke(eventObj)
-{
-    tool.strokeStyle = eventObj.color;
-    tool.lineWidth = eventObj.width;
-    tool.lineTo(eventObj.x,eventObj.y);
-    tool.stroke();
 }
 
 pencilColor.forEach((colorElem) => {
