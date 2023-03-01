@@ -64,12 +64,14 @@ body {
   left: 25vw;
   display: none;
 }
+
 .pencil-width-cont {
   height: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .pencil-width-cont input {
   width: 80%;
 }

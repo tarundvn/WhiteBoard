@@ -6,6 +6,7 @@ let pencilColor  = document.querySelectorAll(".pencil-color");
 let pencilWidthElem  = document.querySelector(".pencil-width");
 let eraserWidthElem  = document.querySelector(".eraser-width");
 let download = document.querySelector(".download");
+
 let undo = document.querySelector(".undo");
 let redo = document.querySelector(".redo");
 
